@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TypeComponent implements OnInit {
 
   @Input()
-  typesPokemon:string[] = ["Elétrico","Pedra"]
+  typePokemon:string = ""
 
   constructor() { }
 

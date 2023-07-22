@@ -1,15 +1,20 @@
 <div class="card__container">
     <app-title
-        namePokemon={{namePokemon}}
+        namePokemon={{pokemon.name}}
     ></app-title>
     <div class="card__img">
         <img 
-            [src]=[imgPokemon] 
+            src={{pokemon.sprites.front_default}}
             alt="Pikachu" 
             srcset=""
         >
     </div>
-    <app-type
-        
-    ></app-type>
+    <div class="card__types">
+        <app-type
+            *ngFor="let t of pokemon.types"
+            typePokemon= {{t.type.name}}
+        >
+        </app-type>   
+    </div>
+    
 </div>
