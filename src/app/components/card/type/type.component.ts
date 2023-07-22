@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-type',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./type.component.css']
 })
 export class TypeComponent implements OnInit {
+
+  @Input()
+  typesPokemom:string[] = ["Elétrico","Pedra"]
 
   constructor() { }
 
