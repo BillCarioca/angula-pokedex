@@ -1,7 +1,7 @@
 <div class="home__container">
     <app-card
-        imgPokemon="../../../assets/Pikachu-1.png" 
-        namePokemon="Pikachu"
+    *ngFor= "let pokemon of pokemons.results"
+        namePokemon={{pokemon.name}}
     ></app-card> 
 </div>
 

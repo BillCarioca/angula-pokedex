@@ -1,4 +1,4 @@
-<div class="card__container">
+<div class="card__container {{typePokemon}}" >
     <app-title
         namePokemon={{pokemon.name}}
     ></app-title>
@@ -14,6 +14,7 @@
             *ngFor="let t of pokemon.types"
             typePokemon= {{t.type.name}}
         >
+        
         </app-type>   
     </div>
     

@@ -11,13 +11,12 @@ export class CardComponent implements OnInit {
 
   pokemon: pokemonData 
 
-  @Input()
-  imgPokemon:string = ""
-  @Input()
-  namePokemon:string = ""
-  @Input()
-  typesPokemon:string[] = [""]
 
+  typePokemon : string = "normal"
+
+  @Input()
+  namePokemon:string = "pikachu"
+  
   constructor(private service:PokemonService) {
     this.pokemon ={
       id :0,
@@ -30,7 +29,7 @@ export class CardComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.service.getPokemon("pikachu").subscribe(
+    this.service.getPokemon(this.namePokemon).subscribe(
       {
         next: (res)=> {
           this.pokemon = {
@@ -39,12 +38,14 @@ export class CardComponent implements OnInit {
             sprites: res.sprites,
             types: res.types
           }
-          console.log(res)
+          this.typePokemon = res.types[0].type.name
+          console.log(this.pokemon)
         },
         error: (err)=> console.log(err)
         
       }
     )
+  
   }
 
 }
