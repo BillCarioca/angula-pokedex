@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TitleComponent implements OnInit {
 
   @Input()
-  namePokemom:string = ""
+  namePokemon:string = ""
   constructor() { }
 
   ngOnInit(): void {

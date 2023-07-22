@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { TitleComponent } from './components/card/title/title.component';
 import { TypeComponent } from './components/card/type/type.component';
 
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { TypeComponent } from './components/card/type/type.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-card',
@@ -8,15 +9,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardComponent implements OnInit {
 
   @Input()
-  imgPokemom:string = ""
+  imgPokemon:string = ""
   @Input()
-  namePokemom:string = ""
+  namePokemon:string = ""
   @Input()
   typesPokemon:string[] = [""]
 
-  constructor() { }
+  constructor(private service:PokemonService) { }
 
   ngOnInit(): void {
+    this.service.getPokemon("pikachu")
   }
 
 }
