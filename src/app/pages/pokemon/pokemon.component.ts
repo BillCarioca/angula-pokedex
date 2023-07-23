@@ -23,8 +23,17 @@ export class PokemonComponent implements OnInit {
     this.pokemon ={
       id :0,
       name: "",
-      sprites:{front_default:""},
-      types:[]
+      sprites:{
+        front_default:"",
+        other:{dream_world:{front_default:""}}
+      },
+      types:[],
+      moves:[],
+      abilities:[],
+      base_experience:0,
+      height:0,
+      weight:0,
+      stats:[]
     }
     this.activeRoute.params.subscribe(
       res =>{
@@ -43,7 +52,13 @@ export class PokemonComponent implements OnInit {
             id: res.id,
             name: res.name,
             sprites: res.sprites,
-            types: res.types
+            types: res.types,
+            moves: res.moves,
+            abilities: res.abilities,
+            base_experience: res.base_experience,
+            height: res.height,
+            weight: res.weight,
+            stats: res.stats
           }
           this.typePokemon = res.types[0].type.name
           console.log(this.pokemon)

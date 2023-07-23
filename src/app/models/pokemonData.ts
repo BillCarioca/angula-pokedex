@@ -1,12 +1,40 @@
 export type pokemonData = {
     sprites: {
         front_default:string
+        other:{
+            dream_world:{
+                front_default:string
+            }
+        }
     }
     name:string
     id:number
     types:{
         slot: number
         type:{
+            name:string
+            url:string
+        }
+    }[]
+    moves:{
+        move:{
+            name:string
+            url:string
+        }
+    }[]
+    abilities:{
+        ability:{
+            name:string
+            url:string
+        }
+    }[]
+    base_experience:number
+    height:number
+    weight:number
+    stats:{
+        base_stat:number
+        effort:number
+        stat:{
             name:string
             url:string
         }

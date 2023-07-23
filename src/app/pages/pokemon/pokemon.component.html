@@ -10,7 +10,7 @@
     </div>
     <div class="pokemon__card">
         <img 
-            src={{pokemon.sprites.front_default}} 
+            src={{pokemon.sprites.other.dream_world.front_default}} 
             alt="Imagem do pokemon {{namePokemon}}" 
             srcset=""
         >
@@ -29,16 +29,41 @@
         </div>
         <div class="data__panel">
             <div *ngIf="panelAbout">
-                <span>1</span>
+                <div class="data__panel__about">
+                    <span class="data__panel__about__span">Base experience</span> 
+                    <span class="data__panel__about__span2">{{pokemon.base_experience}}</span>  
+                </div>
+                <div class="data__panel__about">
+                    <span class="data__panel__about__span">Height</span>
+                    <span class="data__panel__about__span2">{{pokemon.height}}</span>
+                </div>
+                <div class="data__panel__about">
+                    <span class="data__panel__about__span">weight</span>
+                    <span class="data__panel__about__span2">{{pokemon.weight}}</span>
+                </div>
+                <div class="data__panel__about">
+                    <span class="data__panel__about__span">Abilities</span>
+                    <span class="data__panel__about__ability"
+                            *ngFor="let a  of pokemon.abilities"  
+                    >
+                        {{a.ability.name | titlecase}}
+                    </span>
+                </div>
             </div>
             <div *ngIf="panelBaseStats">
-                <span>2</span>
+                <div class="data__panel__stats" *ngFor="let s  of pokemon.stats">
+                    <span class="data__panel__stats__name">{{s.stat.name | titlecase}}</span>
+                    <span class="data__panel__stats__stat">{{s.base_stat}}</span>
+                    <div class="stat__bar">
+                        <div class="progress_bar"></div>
+                    </div>
+                </div>
             </div>
             <div *ngIf="panelEvolutionChain">
                 <span>3</span>
             </div>
-            <div *ngIf="panelMoves">
-                <span>4</span>
+            <div *ngIf="panelMoves" class="data__panel__moves">
+                <span *ngFor="let m  of pokemon.moves"> - {{m.move.name | titlecase}} </span>
             </div>
         </div>
     </div>
