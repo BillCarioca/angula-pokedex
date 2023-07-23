@@ -1,7 +1,10 @@
-<div class="card__container {{typePokemon}}" >
+<button class="card__container {{typePokemon}}" (click)="openPokemon(pokemon.name)">
     <app-title
         namePokemon={{pokemon.name}}
     ></app-title>
+    <div class="card__id">
+        <span>{{pokemon.id}}</span>
+    </div>
     <div class="card__img">
         <img 
             src={{pokemon.sprites.front_default}}
@@ -18,4 +21,4 @@
         </app-type>   
     </div>
     
-</div>
+</button>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { pokemonData } from 'src/app/models/pokemonData';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
@@ -10,14 +11,14 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class CardComponent implements OnInit {
 
   pokemon: pokemonData 
-
+  
 
   typePokemon : string = "normal"
 
   @Input()
   namePokemon:string = "pikachu"
   
-  constructor(private service:PokemonService) {
+  constructor(private service:PokemonService, private navegador:Router) {
     this.pokemon ={
       id :0,
       name: "",
@@ -46,6 +47,9 @@ export class CardComponent implements OnInit {
       }
     )
   
+  }
+  openPokemon(namePokemon:string): void{
+    this.navegador.navigate(['/pokemon/'+namePokemon])
   }
 
 }

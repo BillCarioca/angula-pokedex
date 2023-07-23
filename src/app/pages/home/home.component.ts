@@ -9,7 +9,8 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class HomeComponent implements OnInit {
   pokemons:pokemonsPage
-
+  offset:number = 0
+  limit:number = 20
 
   constructor(private service:PokemonService) {
     this.pokemons = {
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.service.getPagePokemon(0,20).subscribe(
+    this.service.getPagePokemon(this.offset,this.limit).subscribe(
       {
         next: (res)=> {
           this.pokemons=res
@@ -29,7 +30,17 @@ export class HomeComponent implements OnInit {
         }
       }
     )
-
   }
-
+  morePokemons(): void{
+    this.limit+=20
+    this.service.getPagePokemon(this.offset,this.limit).subscribe(
+      {
+        next: (res)=> {
+          this.pokemons=res
+          console.log(res)
+          console.log(this.pokemons.results[0].name)
+        }
+      }
+    )
+  }
 }

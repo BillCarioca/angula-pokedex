@@ -39,6 +39,15 @@
     width: 190px;
     height: 30px;
 }
+.card__id{
+    margin-top: 40px;
+    margin-left: 5px;
+    padding: 10px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(34, 10, 139, 0.2);
+    color: antiquewhite;
+}
 
 .normal {
     background-color: #a6a877;

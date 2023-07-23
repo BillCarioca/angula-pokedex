@@ -10,6 +10,8 @@ import { TitleComponent } from './components/card/title/title.component';
 import { TypeComponent } from './components/card/type/type.component';
 
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { PokemonComponent } from './pages/pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { HttpClientModule } from '@angular/common/http'
     CardComponent,
     HomeComponent,
     TitleComponent,
-    TypeComponent
+    TypeComponent,
+    PokemonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

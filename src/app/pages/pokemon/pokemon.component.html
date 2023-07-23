@@ -1,0 +1,43 @@
+<div class="pokemon__container">
+    <div class="pokemon__back">
+        <button class="button__back" (click)="voltar()">
+            Back
+        </button>
+    </div>
+    <div class="pokemon__name-id">
+        <span>{{namePokemon|titlecase}}</span>
+        <span>#00</span>
+    </div>
+    <div class="pokemon__card">
+        <img 
+            src="../../../assets/Pikachu-1.png" 
+            alt="Imagem do pokemon {{namePokemon}}" 
+            srcset=""
+        >
+    </div>
+    <div class="pokemon__type">
+        <span>######</span>
+    </div>
+    <div class="pokemon__panel">
+        <div class="menu__panel">
+            <button (click)="onAbout()" (mouseover)="onAbout()">About</button>
+            <button (click)="onBaseStats()" (mouseover)="onBaseStats()">Base Stats</button>
+            <button (click)="onEvolutionChain()" (mouseover)="onEvolutionChain()">Evolution Chain</button>
+            <button (click)="onMoves()" (mouseover)="onMoves()">Moves</button>
+        </div>
+        <div class="data__panel">
+            <div *ngIf="panelAbout">
+                <span>1</span>
+            </div>
+            <div *ngIf="panelBaseStats">
+                <span>2</span>
+            </div>
+            <div *ngIf="panelEvolutionChain">
+                <span>3</span>
+            </div>
+            <div *ngIf="panelMoves">
+                <span>4</span>
+            </div>
+        </div>
+    </div>
+</div>

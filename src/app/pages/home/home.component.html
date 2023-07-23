@@ -1,7 +1,15 @@
 <div class="home__container">
-    <app-card
-    *ngFor= "let pokemon of pokemons.results"
-        namePokemon={{pokemon.name}}
-    ></app-card> 
+    <div class="home__content">
+        <app-card
+        *ngFor= "let pokemon of pokemons.results"
+            namePokemon={{pokemon.name}}
+        ></app-card>     
+    </div>
+    <div class="home__button">
+        <button class="more-button" 
+            (click)="morePokemons()"
+            (pointerover)="morePokemons()"
+        > More Pokemons</button>
+    </div>    
 </div>
 
