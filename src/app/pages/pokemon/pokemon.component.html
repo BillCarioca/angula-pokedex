@@ -6,17 +6,19 @@
     </div>
     <div class="pokemon__name-id">
         <span>{{namePokemon|titlecase}}</span>
-        <span>#00</span>
+        <span>#{{pokemon.id}}</span>
     </div>
     <div class="pokemon__card">
         <img 
-            src="../../../assets/Pikachu-1.png" 
+            src={{pokemon.sprites.front_default}} 
             alt="Imagem do pokemon {{namePokemon}}" 
             srcset=""
         >
     </div>
     <div class="pokemon__type">
-        <span>######</span>
+        <span *ngFor="let t of pokemon.types" class="{{t.type.name}}">
+            {{t.type.name | titlecase}}
+        </span>
     </div>
     <div class="pokemon__panel">
         <div class="menu__panel">
